@@ -27,15 +27,18 @@ body {
 	font-size: 18px;
 }
 
-.column1 {
-  float: left;
-  width: 25%;
+.row {
+  display: flex;
 }
 
-.column2 {
-  float: left;
-  width: 75%;
+.column1 {
+  flex: 25%;
 }
+.column2 {
+  flex: 75%;
+}
+
+
 
 .photo {
     /*display: block;*/
@@ -61,15 +64,12 @@ body {
   <header id="header">
      Brynn Sherman
   </header>
-
-
     <div id="intro" class="row">
   	<div class="column1">
-  		<img class="photo" src="photo.JPG" style="width:200px;height:266px">
+  		<img class="photo" src="photo.JPG" style="width:220px;height:293px">
   	</div>
   	<div class="column2">
-      <p>
-            I am a graduate student at <a href="https://psychology.yale.edu/">Yale University</a>, where I work primarily with Nick Turk-Browne and Marvin Chun. I am broadly interested in learning and memory -- and in particular how they interact with one another. Specifically, my work examines how we use past experience to form predictions about the future, and how those predictions in turn influence our memory. I use a combination of psychophysics, fMRI, and intracranial EEG to address these questions.</p>
+      <p>I am a graduate student at <a href="https://psychology.yale.edu/">Yale University</a>, where I work primarily with Nick Turk-Browne and Marvin Chun. I am broadly interested in learning and memory -- and in particular how they interact with one another. Specifically, my work examines how we use past experience to form predictions about the future, and how those predictions in turn influence our memory. I use a combination of psychophysics, fMRI, and intracranial EEG to address these questions.</p>
 
     		<p>Before Yale, I was an undergraduate and lab manager at New York University, where I worked with Lila Davachi and Sarah DuBrow on how we perceive and remember time.</p>
 
