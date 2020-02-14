@@ -1,4 +1,7 @@
 
+<html>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 <link href='https://fonts.googleapis.com/css?family=Be Vietnam' rel='stylesheet'>
 
 <style>
@@ -23,27 +26,29 @@ body {
 
 
 #intro {
-	margin: 60px auto;
+	margin: 35px auto;
 	width: 80%;
 	font-size: 18px;
 }
 
 .row {
-  display: flex;
+  display:flex;
+  overflow: hidden;
 }
 
 .column1 {
-  flex: 25%;
+  width: 25%;
   display:flex;
   align-items:center;
   justify-content:center;
 }
 .column2 {
-  flex: 75%;
+  width: 75%;
 }
 
 .photo {
     margin: 0 auto;
+    width: 85%;
     
 }
 
@@ -54,6 +59,33 @@ body {
   clear: both;
 }
 
+/* Responsive layout - makes the two columns stack on top of each other instead of next to each other */
+@media screen and (max-width: 900px) {
+
+  .row{
+    display:block;
+    align-items:center;
+    justify-content:center;
+  }
+
+  .column1, .column2 {
+    width: 100%;
+    display: block; 
+    float: none; 
+    align-items:center;
+    justify-content:center;
+    text-align:center;
+
+  }
+
+  .photo{
+    text-align:center;
+    width: 35%;
+  }
+
+
+}
+
 #research{
 	margin: 60px auto;
     width: 80%;
@@ -61,16 +93,19 @@ body {
 }
 
 </style>
+</head>
+
+<body>
 
   <header id="header">
      Brynn Sherman
   </header>
     <div id="intro" class="row">
   	<div class="column1">
-  		<img class="photo" src="photo.JPG" style="width:85%">
+  		<img class="photo" src="photo.JPG">
   	</div>
   	<div class="column2">
-      <p>I am a graduate student at <a href="https://psychology.yale.edu/">Yale University</a>, where I work primarily with Nick Turk-Browne and Marvin Chun. I am broadly interested in learning and memory -- and in particular how they interact with one another. Specifically, my work examines how we use past experience to form predictions about the future, and how those predictions in turn influence our memory. I use a combination of psychophysics, fMRI, and intracranial EEG to address these questions.</p>
+      <p>I am a graduate student at Yale University, where I work primarily with Nick Turk-Browne and Marvin Chun. I am broadly interested in learning and memory -- and in particular how they interact with one another. Specifically, my work examines how we use past experience to form predictions about the future, and how those predictions in turn influence our memory. I use a combination of psychophysics, fMRI, and intracranial EEG to address these questions.</p>
 
     		<p>Before Yale, I was an undergraduate and lab manager at New York University, where I worked with Lila Davachi and Sarah DuBrow on how we perceive and remember time.</p>
 
@@ -101,5 +136,8 @@ body {
 <p>DuBrow, S., <b>Sherman, B.E.</b> & Davachi, L. (2015). The role of the hippocampus in temporal integration across boundaries. Poster presented at Cognitive Neuroscience Society, San Francisco, CA.</p>
 
 </div>
-    
+
+</body>
+
+</html>
 
