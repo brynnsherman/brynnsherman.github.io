@@ -1,0 +1,309 @@
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+
+<style>
+
+body {
+  font-family: Arial, Helvetica;
+  font-size: 14pt;
+}
+
+#header {
+  display: block;
+  /* margin-top: 4em; */
+  background-color: #607d8b;
+  color: #607d8b;
+  /* padding-bottom: 1em; */
+  bottom: 0;
+  text-align: center;
+}
+
+#header nav li {
+  display: inline-block;
+  margin: 1em;
+}
+
+#header nav li a {
+  color: black;
+  background-color: #607d8b;
+}
+
+#footer {
+  display: block;
+  margin-top: 4em;
+  background-color: #607d8b;
+  color: #607d8b;
+  bottom: 0;
+  width: 100%;
+  text-align: center;
+  transform: translateX(-50%);
+  margin-left: 50%;
+}
+
+#footer li{
+  display: inline-block;
+  margin: 1em;
+}
+
+#footer a {
+  color: black;
+  background-color: #607d8b;
+}
+
+#continueButton {
+  width: 200px;
+  text-align: center;
+  border: 4px outset gray;
+  background: gray;
+  padding: 5px;
+  margin: 0 auto;
+}
+
+#startButton {
+  width: 200px;
+  text-align: center;
+  border: 4px outset gray;
+  background: gray;
+  padding: 5px;
+  margin: 0 auto;
+}
+
+#ReStartButton {
+  width: 200px;
+  text-align: center;
+  border: 4px outset gray;
+  background: gray;
+  padding: 5px;
+  margin: 0 auto;
+}
+
+#HomeButton {
+  width: 200px;
+  text-align: center;
+  border: 4px outset gray;
+  background: gray;
+  padding: 5px;
+  margin: 0 auto;
+}
+
+#startScreen {
+  width: 800px;
+  margin: 0 auto;
+  text-align: justify;
+  text-align-last: center;
+}
+
+
+#start:hover {
+  color: white;
+}
+
+#choices {
+  /*border: 4px solid black;*/
+  text-align:left;
+  padding-left: 400px;
+
+}
+
+#board img{
+  /*padding-left: 350px;*/
+  width: 40%;
+  height: auto;
+}
+
+</style>
+
+<html lang="en"><head>
+  <meta charset="UTF-8">
+  <meta name="author" content="Sami Yousif">
+  <meta name="description" content="A fun diversion...">
+  <title> Sami Yousif | CodeNames </title>
+
+  <!-- Global site tag (gtag.js) - Google Analytics -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=UA-145417604-1"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'UA-145417604-1');
+    </script>
+</head>
+
+<header id="header">
+    <nav>
+      <center>
+          <li><a href="index.html">Home</a>
+          </li>
+      </center>
+    </nav>
+</header>
+
+<div id="startScreen">
+<hr>
+<font color="black" size="24"><b>Codenames!</b></font><br>
+(<i>Created in collaboration with <a href=CodeNames/index.html>Sami Yousif</a></i>)<br><br>
+<hr>
+<p> Below are many different Codenames board variants. The goal of these additional rules is to add some additional strategic depth into the game. Of course, this reflects our preferences and is all experimental. Below, we suggest some possible ways of playing the game, but you should feel free to try out your own rules. And let us know if you have any suggestions! <br>
+
+<div id="Black_Inst">
+<h2>5x5 Board: <font color="gray">More danger</font></h2>
+This version is the same as the default game, but with slightly increased risk. Rather than one black space, there are now three -- so you have to be extra careful about every hint. <br><br>
+</div>
+
+<div id="Purple1_Inst">
+<h2>5x5 Board: <font color="purple">Leniency</font></h2>
+This version is the same as the default game, but with the addition of <font color="purple"><b> purple tiles</b></font>. Purple tiles are the exact same as white tiles, except that they will not end your turn. The goal is to create a little bit of strategic variety: it is a tile you don't want to get, but there's also no cost of getting it -- information which may help you as you are giving hints. There are two purple tiles on each board. <br><br>
+</div>
+
+<div id="Purple2_Inst">
+<h2>5x5 Board: <font color="purple">Staging a comeback</font></h2>
+This version also involves the addition of <font color="purple"><b> purple tiles</b></font>, but with a slightly different rule-set. Here, purple tiles that are activated can count towards either team. However, the points will always go to the team who has fewer points <i> not counting the purple tiles</i>. The goal here is to create a possible come-back mechanism. If you're several tiles behind, you now have a way of battling back using the purple tiles. And if you're ahead, you need to be especially careful not to accidentally land on these tiles. There are two purple tiles on each board. <br><br>
+</div>
+
+<div id="Purple3_Inst">
+<h2>5x5 Board: <font color="purple">Extra hints!</font></h2>
+This version also involves the addition of <font color="purple"><b> purple tiles</b></font>, but with a slightly different rule-set. Here, when either team activates a purple tile, they receive one 'hint token' that can be used only once on any subsequent turn. With this, you can give special hints -- phrases that include up to 3 words. When you activate a purple tile, it does not end your turn. There are two purple tiles on each board. <br><br>
+</div>
+
+<div id="Green_Inst">
+<h2>5x5 Board: <font color="green">Mixing things up</font></h2>
+This version is the same as the default game, but with the addition of <font color="green"><b> green tiles</b></font>. Green tiles are designed to mix things up. Here's how they work: anytime your team lands on a green tile, your turn pauses. Before you continue, the spymaster of your team has the option to swap up to four cards on the board. In other words: they can pick up <i> up to </i> four cards, and then replace them (with the same word facing up) in any open position. This can provide a massive advantage, as shifting only a few cards can help to set up a great hint on a later turn. But be careful: you don't want to give away any information to the other team, and you also don't want to disrupt your team's current turn. There are two green tiles on each board. Green tiles do not count towards the point total. <br><br>
+</div>
+
+<div id="Orange_Inst">
+<h2>5x5 Board: <font color="orange">Flipping out </font></h2>
+This version is the same as the default game, but with the addition of<font color="orange"><b> orange tiles</b></font>. Orange tiles are designed to totally shift the course of the game. Here's how they work. First, there are only ever two orange tiles on a board. If you land on one, nothing happens, and you can continue your turn as normal. But once either team lands on the second orange tile (regardless of who landed on the first), that teams turn ends immediately and every remaining card on the board gets flipped over (or otherwise swapped for a different word). Then, the team that landed on the second orange tile gets to take another complete turn. Orange tiles do not count towards the point total. <br><br>
+</div>
+
+<div id="Crazy_Inst">
+<h2>5x5 Board: <font color="purple">C</font><font color="green">h</font><font color="orange">a</font><font color="blue">o</font><font color="red">s</font></h2>
+This version contains a little bit of everything: there are 17 red and blue tiles, 2 black tiles, 2 purple tiles, 2 green tiles, and 2 orange tiles. Here, you have to be very careful with your hints, as every single tile on the board comes with consequences. This version may be too complicated as it is, but we'll probably try some new variants out in the future. (You can play with whichever purple tile rules you prefer!) <br> <br> <p>
+</div>
+
+<div id="Hard_Inst">
+<h2>6x6 Board: <font color="gray">Standard</font></h2>
+This is standard board, but there are 6 rows and 6 columns. There are 25 red and blue tiles, 6 black tiles, and the rest are white. The goal here is to give the hint-giver more options: because there are more tiles on the board, there are more opportunities to tie them together. But, on the flip side, there are more opportunities to make errors. The hint givers need to be <i> very </i> careful to consider the entire board when giving hints. <br> <br> <p>
+</div>
+
+<div id="HardFull_Inst">
+<h2>6x6 Board: <font color="gray">No white tiles!</font></h2>
+This is standard board, but there are 6 rows and 6 columns. The major change is that there are no white tiles: if you get a hint wrong, either the other team gets a point, or you instantly lose (if you land on the single black tile). The stakes for each hint are much higher -- so be careful! <br> <br> <p>
+</div>
+
+<div id="HardRainbow_Inst">
+<h2>6x6 Board: <font color="purple">R</font><font color="green">a</font><font color="orange">i</font><font color="blue">n</font><font color="red">b</font><font color="purple">o</font><font color="green">w</font></h2>
+This is standard board, but there are 6 rows and 6 columns. This is analagous to the crazy board above: there's a little bit of everything. In total, there are 25 red and blue tiles, 1 black card, 4 purple tiles, 4 green tiles, and 2 orange tiles. There's a lot to think about, so try out some of those extra tiles to mix things up. <br> <br> <p>
+</div>
+
+<div id="Sabotage_Inst">
+<h2>6x6 Board: <font color="orange">Sabotage</font></h2>
+This is standard board, but there are 6 rows and 6 columns. There are 21 red and blue tile, four orange tiles, and four purple tiles. The orange tiles are sabotage tiles. If you land on this tile, you <i>must</i> immediately pause your turn and 'destroy' one tile. The people receiving the hint must choose which tile to destory; the hint-giver cannot offer input. If they destory either a red or a blue tile, it is removed from the game; neither team can take the tile, and it does not count towards either team's point total. However, both teams still need the same number of points. This can be overcome by getting purple tiles. Purple tiles will count towards your team as normal, but there's a catch. If you select a purple tile, you cannot select any other tiles that turn. And if you already selected another tile that turn, the purple tile is also destroyed. This means there are now two separate win conditions: either you can get to your own required point total, or you can prevent the other team from reaching theirs. If enough tiles are destroyed so that neither team can reach their point total, then the team with the most points wins. Again, we haven't tried this out ourselves, so it may be trickier than we are imagining. <br> <br> <p>
+</div>
+
+<div id="ThreeTeams_Inst">
+<h2>6x6 Board: <font color="purple">Three Teams</font></h2>
+Ever wanted to play CodeNames with three teams? Now you can. This board is much like a standard board, except there is a third team (purple team). There are 3 black tiles. We haven't tried this out yet, so we have no idea if this is a good idea. <br> <br> <p>
+</div>
+
+
+
+<p> <b>Which board would you like to play?</b>
+<form action="/action_page.php">
+  <select id ="selectPage">
+    <option value="Black">More Danger [black]</option>
+    <option value="Purple">Leniency [purple]</option>
+    <option value="Purple">Staging a comeback [purple]</option>
+    <option value="Purple">Extra hints! [purple]</option>
+    <option value="Green">Mixing things up [green]</option>
+    <option value="Orange">Flipping out [orange]</option>
+    <option value="Crazy">Chaos [all]</option>
+    <option value="Hard">6x6: Standard</option>
+    <option value="Hard-Full">6x6: No white tiles!</option>
+    <option value="Hard-Rainbow">6x6: Rainbow</option>
+    <option value="Sabotage">6x6: Sabotage</option>
+    <option value="Three-Team">6x6:Three teams</option>
+  </select>
+
+</form>
+
+<div id="startButton">
+<a href="#" id="start">Go!</a>
+</div>
+</div>
+
+<div>
+<center>
+<div id="board" class="theboard">
+<img id="boardIm" src="Purple_5.png" width="700" class="trialImage"></div>
+
+<p><p>
+
+<div id="ReStartButton">
+<a href="#" id="start">Play again!</a>
+</div>
+
+<p><p>
+<div id="HomeButton">
+<a href="#" id="start">Restart!</a>
+</center>
+</div>
+
+<footer id="footer">
+    <nav>
+        <ul>
+            <li><a href="index.html"></a>
+            </li>
+
+        </ul>
+    </nav>
+</footer>
+
+<script>
+
+var theBoard;
+$('#HomeButton').hide()
+$('#board').hide();
+$('#ReStartButton').hide();
+
+$('#startButton').click(go);
+$('#ReStartButton').click(go);
+$('#HomeButton').click(home);
+
+
+function go() {
+
+  // get the board they chose
+  var theBoard = document.getElementById('selectPage').value;
+  console.log(theBoard);
+
+  // pick a number
+  theBoardNum = Math.floor(Math.random(0,100)*100);
+
+  boardName = theBoard + "_" + theBoardNum + ".png"
+  console.log(boardName)
+
+  document.getElementById("boardIm").src = boardName;
+
+  $('#startScreen').hide();
+  $('#board').show();
+
+  $('#ReStartButton').show();
+
+  $('#HomeButton').show()
+
+
+}
+
+function home() {
+  $('#HomeButton').hide()
+  $('#board').hide()
+  $('#ReStartButton').hide()
+  $('#startScreen').show()
+}
+
+/* Fisher-Yates shuffle */
+function shuffle(o){
+    for(var j, x, i = o.length; i; j = Math.floor(Math.random() * i), x = o[--i], o[i] = o[j], o[j] = x);
+    return o;
+}
+
+</script>
